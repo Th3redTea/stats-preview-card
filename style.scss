@@ -20,28 +20,36 @@
 body{
     background-color: var(--Very-dark-blue);
     color: white;
-    display: flex;
     justify-content: center;
-    height: 90vh;
     align-items: center;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .container{
     width: 80%;
     display: flex;
-    margin: 0 auto;
+    margin: 100px auto;
     height: 450px;
     background-color: var(--Dark-desaturated-blue);
-}
+
+    @media screen and (max-width: 620px){
+        flex-direction: column;
+        position: relative;
+        height: 740px;
+        
+    }
+
+}   
 
 .image{
     height: 100%;
     width: 50%;
     position: relative;
+    
     #mobile-image{
         visibility: hidden;
     }
+
 
     #desktop-image{
         
@@ -56,7 +64,36 @@ body{
         width: 100%;
         top: 0;
         opacity: 0.5;
+    }
 
+    @media screen and (max-width: 620px){
+        position: absolute;
+        top: 0;
+        height: 30%;
+        width: 100%;
+        
+
+        #mobile-image{
+            visibility: visible;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        #desktop-image{
+            visibility: hidden;
+        }
+
+        #soft-background{
+            background-color: var(--Soft-violet);
+            height:100%;
+            width: 100%;
+            opacity: 0.5;
+            z-index: 10;
+        }
     }
 }
 
@@ -93,7 +130,7 @@ body{
         color: white;
         width: 70%;
         
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
         justify-content: space-between;
 
         div{
@@ -108,5 +145,32 @@ body{
             color: var(--transparent-white);
             font-family: var(--Inter-font)
         }
+
+        @media screen and (max-width: 620px){
+            flex-direction: column;
+            
+            div{
+                margin: 5px;
+            }
+        }
     }
+
+    @media screen and (max-width: 620px){
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        height: 70%;
+
+        .headline-text{
+            margin: 15px auto;
+            width: 80%;
+            h1{
+                margin-bottom: 15px;
+            }
+ 
+        }    
+
+    }
+
 }
